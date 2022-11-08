@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function RecentSerivice() {
   return (
@@ -43,6 +44,11 @@ function RecentSerivice() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="text-center">
+        <Link to="/service">
+          <button className="btn btn-primary">See All</button>
+        </Link>
       </div>
     </div>
   );
