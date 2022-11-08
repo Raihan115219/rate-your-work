@@ -27,29 +27,27 @@ function ServiceDetails() {
           consequatur deleniti.
         </div>
         <div className="bg-red-100 w-96 p-10">
-          {user ? (
-            <div className="flex sticky-top">
-              <div className="flex-none ...">
-                <div className="w-8 rounded-full m-1 text-start">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIj_BMKIw-mq_bTHV_BQo4SA1A603JZ3F21cyY7jQCiTz3LC8HTECw_GvcQMoEYP1n2o8&usqp=CAU"
-                    alt="userr"
-                  />
+          <div class="flex justify-between ...">
+            <div>
+              <div className="avatar placeholder mr-2">
+                <div className="bg-neutral-focus text-neutral-content rounded-full w-8">
+                  <span className="text-xs">AA</span>
                 </div>
               </div>
-              <div className="flex-1 w-full">
+            </div>
+            <div className="w-96 mr-3">
+              <form action="">
                 <input
                   type="text"
                   placeholder="Type here"
-                  className="input w-full"
+                  className="input w-full max-w-xs"
                 />
-              </div>
-              <div className="flex-1 w-10 text-end">
-                <button className="btn btn-primary">comments</button>
-              </div>
+              </form>
             </div>
-          ) : undefined}
-          <hr />
+            <div className="ms-1">
+              <button className="btn btn-secondary">Review</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
