@@ -1,6 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import MainPage from "./Pages/login/MainPage";
+import MainPage from "./Pages/Login/MainPage";
 import router from "./Router/Routes";
 
 function App() {

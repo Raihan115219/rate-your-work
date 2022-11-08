@@ -6,8 +6,12 @@ function Header() {
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <NavLink to="/" className="btn btn-ghost normal-case text-xl">
-            Plamber
+          <NavLink to="/">
+            <img
+              src="https://mrplumberindy.com/wp-content/uploads/2021/01/WCA_MP_Logo_Full_Color512x512.png"
+              alt=""
+              className="w-24 rounded-full"
+            />
           </NavLink>
         </div>
         <div className="flex-none gap-2">

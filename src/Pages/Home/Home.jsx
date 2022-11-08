@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Banner from "../../Components/Banner";
 import RecentSerivice from "../../Components/RecentService/RecentSerivice";
+import { AuthContext } from "../../Contexts/UserContext";
 
 function Home() {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div>
       <div className="mb-3">

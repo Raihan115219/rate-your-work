@@ -3,8 +3,8 @@ import React from "react";
 function ServiceDetails() {
   return (
     <div>
-      <div class="grid lg:grid-cols-5 md:grid-cols-1 p-8 gap-2 container">
-        <div class="bg-blue-100 col-span-4 p-5">
+      <div class="grid lg:grid-cols-2 md:grid-cols-1 p-8 gap-10 container">
+        <div class="bg-blue-100 p-5 w-full">
           jsdfjklsjdfkljskl Lorem ipsum dolor, sit amet consectetur adipisicing
           elit. Doloribus sed fuga a ullam? Numquam laboriosam fugiat nemo atque
           excepturi qui voluptatibus ex a nostrum ratione adipisci obcaecati sed
@@ -24,7 +24,7 @@ function ServiceDetails() {
           Omnis delectus cumque commodi iusto veritatis architecto, dolore
           consequatur deleniti.
         </div>
-        <div class="bg-red-100 w-100 ">
+        <div class="bg-red-100 w-96">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
           explicabo officiis temporibus deserunt consequuntur a sunt iusto
           voluptatum omnis reprehenderit.
