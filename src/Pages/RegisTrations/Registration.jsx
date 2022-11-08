@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../contexts/UserContext";
 
 function Registration() {
   const { register, handleSubmit } = useForm();
+  const { userCreate, user, updateUserProfile } = useContext(AuthContext);
   const handleRegistration = (data) => {
-    console.log(data);
+    console.log("this is from data regi", data.photoURL);
+
+    userCreate(data.email, data.password)
+      .then((result) => {
+        console.log(result.user);
+        handleUpdatedProfile(data.name, data.photoURL);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // profile update fucntons
+  const handleUpdatedProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile);
   };
 
   return (
@@ -13,6 +33,7 @@ function Registration() {
       <div className="hero min-h-screen bg-base-200 my-5">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
+            <h1 className="text-5xl font-bold">{user?.email}</h1>
             <h1 className="text-5xl font-bold">Registerd now!</h1>
             <p className="py-6">
               Login gives you more features and access to this site...

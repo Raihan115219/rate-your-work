@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../contexts/UserContext";
 
 function ServiceDetails() {
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <div class="grid lg:grid-cols-2 md:grid-cols-1 p-8 gap-10 container">
@@ -24,10 +26,30 @@ function ServiceDetails() {
           Omnis delectus cumque commodi iusto veritatis architecto, dolore
           consequatur deleniti.
         </div>
-        <div class="bg-red-100 w-96">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-          explicabo officiis temporibus deserunt consequuntur a sunt iusto
-          voluptatum omnis reprehenderit.
+        <div className="bg-red-100 w-96 p-10">
+          {user ? (
+            <div className="flex sticky-top">
+              <div className="flex-none ...">
+                <div className="w-8 rounded-full m-1 text-start">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIj_BMKIw-mq_bTHV_BQo4SA1A603JZ3F21cyY7jQCiTz3LC8HTECw_GvcQMoEYP1n2o8&usqp=CAU"
+                    alt="userr"
+                  />
+                </div>
+              </div>
+              <div className="flex-1 w-full">
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  className="input w-full"
+                />
+              </div>
+              <div className="flex-1 w-10 text-end">
+                <button className="btn btn-primary">comments</button>
+              </div>
+            </div>
+          ) : undefined}
+          <hr />
         </div>
       </div>
     </div>

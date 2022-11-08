@@ -1,7 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../contexts/UserContext";
 
 function Header() {
+  const { userSignOut, user } = useContext(AuthContext);
+
+  // const handleLogout=()=>{
+  //   userSignOut()
+  // }
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -28,6 +34,14 @@ function Header() {
             <li>
               <NavLink to="/login">Lgoin</NavLink>
             </li>
+
+            {user ? (
+              <li>
+                <NavLink to="/review">My Review</NavLink>
+              </li>
+            ) : (
+              ""
+            )}
           </ul>
           <div className="form-control">
             <input
@@ -39,7 +53,15 @@ function Header() {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="https://placeimg.com/80/80/people" />
+                {/*  */}
+                {user ? (
+                  <img src={user?.photoURL} alt={user.displayName} />
+                ) : (
+                  <img
+                    src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?b=1&s=612x612&w=0&k=20&c=IJ1HiV33jl9wTVpneAcU2CEPdGRwuZJsBs_92uk_xNs="
+                    alt="user"
+                  />
+                )}
               </div>
             </label>
             <ul
@@ -56,7 +78,13 @@ function Header() {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                {user ? (
+                  <button onClick={userSignOut}>Logout</button>
+                ) : (
+                  <Link to="/login">
+                    <button className="btn btn-primary">sign-in</button>
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
