@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 function RecentSerivice() {
   return (
     <div>
-      <div>
-        <h1 className="center">My Recent service</h1>
-      </div>
       <div className="grid grid-cols-3 my-5">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure>

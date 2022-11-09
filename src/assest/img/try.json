@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Air lock",
+    "desc": "An air lock is a restriction of, or complete stoppage of liquid flow caused by vapour trapped in a high point of a liquid-filled pipe system. The gas, being less dense than the liquid, rises to any high points. This phenomenon is known as vapor lock, or air lock.Flushing the system with high flow or pressures can help move the gas away from the highest point. Also, a tap (or automatic vent valve) can be installed to let the gas out.Air lock problems often occur when one is trying to recommission a system after it has been deliberately (for servicing) or accidentally emptied. For example, a central heating system using a circulating pump to pump water through radiators. When filling such a system, air is trapped in the radiators. This air has to be vented using screw valves built into the radiators. Depending on the pipe layout - if there are any upside down 'U's in the circuit - it will be necessary to vent the highest point(s). If not, air lock may cause waterfall flow where the loss of hydraulic head is equal to the height of airlock; If the hydraulic grade line drops below the output of pipe, the flow through that part of the circuit would stop completely. Note that circulating pumps usually do not generate enough pressure to overcome air locks.",
+    "img": "https://www.wikihow.com/images/thumb/4/4e/Remove-an-Airlock-from-Your-Hot-Water-System-Step-7-Version-2.jpg/v4-460px-Remove-an-Airlock-from-Your-Hot-Water-System-Step-7-Version-2.jpg.webp",
+    "rating": 4.5,
+    "price": "$1800",
+    "reviews": [
+      {
+        "id": 1,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 3,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 4,
+        "comment": "You did realy well buddy"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Fire sprinkler system",
+    "desc": "A fire sprinkler system is an active fire protection method, consisting of a water supply system, providing adequate pressure and flowrate to a water distribution piping system, onto which fire sprinklers are connected. Although historically only used in factories and large commercial buildings, systems for homes and small buildings are now available at a cost-effective price.[1] Fire sprinkler systems are extensively used worldwide, with over 40 million sprinkler heads fitted each year. Even though Fire Sprinkler Systems are a Life Saving System and are not designed to protect the building, 96% of buildings that had fires and were completely protected by fire sprinkler systems were controlled by the fire sprinklers alone.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Fire_sprinkler_roof_mount_side_view.jpg/450px-Fire_sprinkler_roof_mount_side_view.jpg",
+    "rating": 4.5,
+    "price": "$1800",
+    "reviews": [
+      {
+        "id": 1,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 3,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 4,
+        "comment": "You did realy well buddy"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Flow limiter",
+    "desc": "A flow limiter or flow restrictor is a device to restrict the flow of a fluid, in general a gas or a liquid.[1] Some designs use single stage or multi stage orifice plates to handle high and low flow rates. Flow limiters are often used in manufacturing plants as well as households. Safety is usually the main purpose of using a flow limiter. An example is manufacturing facilities and laboratories using flow limiters to prevent injury or death from noxious gases that are in use.[2] The flow limiter prevents gases from causing injury or death by reducing its cross-sectional area where gas flows.",
+    "img": "https://blog.bermad.com/hubfs/Flow_Control_Valves_14%5B2%5D.jpg.jpg",
+    "rating": 4.5,
+    "price": "$1800",
+    "reviews": [
+      {
+        "id": 1,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 3,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 4,
+        "comment": "You did realy well buddy"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Backflow prevention device",
+    "desc": "In water distribution systems, water is normally maintained at a significant pressure to enable water to flow from the tap, shower, or other fixture. Water pressure may fail or be reduced when a water main bursts, pipes freeze, or there is unexpectedly high demand on the water system (for example, when several fire hydrants are opened). Reduced pressure in the pipe may allow contaminated water from the soil, from storage, or from other sources to be drawn up into the system.",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrnJhJXkJSW5F-aK2MSYG7ppsmKkAYLbym0OZR0sUjEXmRtdD4Yh2yDUUipE6LOpBLHwQ&usqp=CAU",
+    "rating": 4.5,
+    "price": "$1800",
+    "reviews": [
+      {
+        "id": 1,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 3,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 4,
+        "comment": "You did realy well buddy"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Aquastat",
+    "desc": "An aquastat is a device used in hydronic heating systems for controlling water temperature. To prevent the boiler from firing too frequently, aquastats have a high limit temperature and a low limit. If the thermostat is calling for heat, the boiler will fire until the high limit is reached, then shut off (even if the thermostat is still calling for heat). The boiler will re-fire if the boiler water temperature drops below a range around the high limit. The high limit exists for the sake of efficiency and safety. The boiler will also fire (regardless of thermostat state) when the boiler water temperature goes below a range around the low limit, ensuring that the boiler water temperature remains above a certain point. The low limit is intended for tankless domestic hot water; it ensures that boiler water is always warm enough to heat the domestic hot water. Many aquastats also have a differential (diff) control which determines the size of the range around the low and/or high controls.",
+    "img": "https://www.pmmag.com/ext/resources/PM/2017/September-2017/PM0917_TheFix-Figure2.jpg",
+    "rating": 4.5,
+    "price": "$1800",
+    "reviews": [
+      {
+        "id": 1,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 3,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 4,
+        "comment": "You did realy well buddy"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Heat trap",
+    "desc": "Heat traps are valves or loops of pipe installed on the cold water inlet and hot water outlet pipes on water heaters. The heat traps allow cold water to flow into the water heater tank, but prevent unwanted convection and heated water to flow out of the tank.[1][2] Newer water heaters have built-in heat traps.Many water-heating pieces of equipment have integral heat traps installed from the factory. For water-heating equipment that does not already have factory installed heat traps, they must be purchased then installed in the inlet and outlet connections.[3]Heat traps are very simple and inexpensive. They are an effective way to prevent cooling of hot water in water heaters by thermosyphoning the hot water to a higher elevated portion of the piping system. Thermosyphoning is based on natural convection. Hot water rises and is then displaced by cold water beneath it. The heat trap stops this process, thus keeping the hot water inside the insulated storage tank.[3]",
+    "img": "https://i.pinimg.com/originals/6a/f5/10/6af510b626c89ed4cab611fd79ac6f33.jpg",
+    "rating": 4.5,
+    "price": "$1800",
+    "reviews": [
+      {
+        "id": 1,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 3,
+        "comment": "You did realy well buddy"
+      },
+      {
+        "id": 4,
+        "comment": "You did realy well buddy"
+      }
+    ]
+  }
+]

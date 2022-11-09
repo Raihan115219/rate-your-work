@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import Banner from "../../Components/Banner";
+import MyInspirations from "../../Components/MyInspirations/MyInspirations";
+import MySuccess from "../../Components/MySuccess/MySuccess";
 import RecentSerivice from "../../Components/RecentService/RecentSerivice";
 import { AuthContext } from "../../contexts/UserContext";
 
@@ -12,13 +14,55 @@ function Home() {
         <Banner></Banner>
       </div>
       <div>
+        <div className="flex justify-center mt-20">
+          <div className="text-center">
+            <h1 className="text-6xl font-bold underline underline-offset-8 pb-4">
+              My Recent Service
+            </h1>
+            <div className="flex justify-center">
+              <p className=" text-center py-3 text-xl text-gray-500">
+                My Work, My Pleasure.
+              </p>
+            </div>
+          </div>
+        </div>
         <RecentSerivice></RecentSerivice>
       </div>
-      <div className="text-center">
-        <h1 className="text-5xl underline-offset-4">Inspirations</h1>
+      <div>
+        <div className="flex justify-center mt-10">
+          <div className="flex justify-center mt-20">
+            <div className="text-center">
+              <h1 className="text-6xl font-bold underline underline-offset-8 pb-4">
+                My Motivations
+              </h1>
+              <div className="flex justify-center">
+                <p className=" text-center py-3 text-xl text-gray-500">
+                  My motivations keeps me uper...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* My inspiration */}
+        <MyInspirations></MyInspirations>
       </div>
-      <div className="text-center">
-        <h1 className="text-5xl underline-offset-4">I Have done</h1>
+      <div>
+        <div className="flex justify-center mt-20">
+          <div className="text-center">
+            <h1 className="text-6xl font-bold underline underline-offset-8 pb-4">
+              My Ratio
+            </h1>
+            <div className="flex justify-center">
+              <p className=" text-center py-3 text-xl text-gray-500">
+                This things makes me more proude
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* my Succes */}
+        <div className="text-center">
+          <MySuccess></MySuccess>
+        </div>
       </div>
     </div>
   );

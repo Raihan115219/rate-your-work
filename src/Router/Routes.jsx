@@ -7,6 +7,9 @@ import Service from "../Pages/Service/Service";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/RegisTrations/Registration";
 import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
+import MyReview from "../Pages/My-Review/MyReview";
+import AddService from "../Pages/Add-Service/AddService";
+import BlogPage from "../Pages/BlogPage/BlogPage";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +26,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/service",
-        element: (
-          <PrivetRoute>
-            <Service />
-          </PrivetRoute>
-        ),
+        element: <Service />,
+      },
+      {
+        path: "/review",
+        element: <MyReview></MyReview>,
+      },
+      {
+        path: "/add",
+        element: <AddService></AddService>,
+      },
+      {
+        path: "/blog",
+        element: <BlogPage></BlogPage>,
       },
       {
         path: "/service/:id",

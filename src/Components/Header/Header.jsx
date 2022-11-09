@@ -49,6 +49,9 @@ function Header() {
             <li>
               <NavLink to="/sign-up">Registration</NavLink>
             </li>
+            <li>
+              <NavLink to="/blog">Blog</NavLink>
+            </li>
           </ul>
           <div className="form-control">
             <input

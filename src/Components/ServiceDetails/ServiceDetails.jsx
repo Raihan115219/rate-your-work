@@ -14,18 +14,23 @@ function ServiceDetails() {
           {/* details */}
           <SingleDetails></SingleDetails>
         </div>
-        <div className="bg-red-100 w-96  p-5">
+        <div className="bg-red-100 w-96  p-5 max-h-96 overflow-auto overflow-x-hidden">
           <h1 className="text-center text-5xl p-3">Reviews</h1>
           {user ? (
             // reviews form
             <ReviewForm></ReviewForm>
           ) : (
             <h1>
-              Please login first to Add review <Link to="/login">login</Link>
+              Please login first to Add review{" "}
+              <Link to="/login">
+                <button className="btn btn-ghost">login</button>
+              </Link>
             </h1>
           )}
           <div className="w-full h-1 bg-black my-5"></div>
           {/* reviews */}
+          <Reviews></Reviews>
+          <Reviews></Reviews>
           <Reviews></Reviews>
           <Reviews></Reviews>
           <Reviews></Reviews>
