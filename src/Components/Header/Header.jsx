@@ -28,20 +28,27 @@ function Header() {
             <li>
               <NavLink to="/service">service</NavLink>
             </li>
+
+            {user ? (
+              <>
+                <li>
+                  <NavLink to="/review">My Review</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/add">Add Service</NavLink>
+                </li>
+                <li onClick={userSignOut}>
+                  <NavLink to="/login">Log out</NavLink>
+                </li>
+              </>
+            ) : (
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+            )}
             <li>
               <NavLink to="/sign-up">Registration</NavLink>
             </li>
-            <li>
-              <NavLink to="/login">Lgoin</NavLink>
-            </li>
-
-            {user ? (
-              <li>
-                <NavLink to="/review">My Review</NavLink>
-              </li>
-            ) : (
-              ""
-            )}
           </ul>
           <div className="form-control">
             <input

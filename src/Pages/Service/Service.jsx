@@ -1,6 +1,7 @@
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { Link } from "react-router-dom";
 
 function Service() {
   return (
@@ -23,7 +24,11 @@ function Service() {
                   <div className="badge badge-outline">Price: 45$</div>
                 </div>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
-                <button className="btn btn-primary">see more</button>
+                <Link to="/service/5">
+                  <button className="btn btn-primary w-full">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

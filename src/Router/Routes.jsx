@@ -6,6 +6,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 import Service from "../Pages/Service/Service";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/RegisTrations/Registration";
+import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/service",
-        element: <Service />,
+        element: (
+          <PrivetRoute>
+            <Service />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/service/:id",
