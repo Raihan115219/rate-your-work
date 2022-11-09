@@ -1,18 +1,27 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../contexts/UserContext";
 
 function Registration() {
-  const { register, handleSubmit } = useForm();
-  const { userCreate, user, updateUserProfile } = useContext(AuthContext);
+  const { register, handleSubmit, reset } = useForm();
+  const { userCreate, user, googleLogin, updateUserProfile } =
+    useContext(AuthContext);
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/home";
+
+  const Navigate = useNavigate();
   const handleRegistration = (data) => {
     console.log("this is from data regi", data.photoURL);
+    const name = data.name;
+    const photoURL = data.photoURL;
 
     userCreate(data.email, data.password)
       .then((result) => {
         console.log(result.user);
-        handleUpdatedProfile(data.name, data.photoURL);
+        handleUpdatedProfile(name, photoURL);
+        Navigate(from, { replace: true });
+        reset();
       })
       .catch((err) => {
         console.log(err);
@@ -33,7 +42,6 @@ function Registration() {
       <div className="hero min-h-screen bg-base-200 my-5">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">{user?.email}</h1>
             <h1 className="text-5xl font-bold">Registerd now!</h1>
             <p className="py-6">
               Login gives you more features and access to this site...
@@ -80,7 +88,7 @@ function Registration() {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     placeholder="password"
                     className="input input-bordered"
                     {...register("password", { required: true })}
@@ -90,7 +98,7 @@ function Registration() {
                   <button className="btn btn-primary">Sign UP</button>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">
+                  <button onClick={googleLogin} className="btn btn-primary">
                     Sign up with google
                   </button>
                 </div>

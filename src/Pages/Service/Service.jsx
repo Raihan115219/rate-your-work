@@ -12,7 +12,15 @@ function Service() {
   return (
     <div>
       <div>
-        <h1>my Serivcess</h1>
+        <div className="flex justify-center mt-10">
+          <div className="flex justify-center mt-10">
+            <div className="text-center">
+              <h1 className="text-6xl font-bold underline underline-offset-8 pb-4">
+                All Service
+              </h1>
+            </div>
+          </div>
+        </div>
         <div>
           <div className="grid grid-cols-2 gap-5 my-5">
             {service.map((serviceItem, index) => {
@@ -35,7 +43,11 @@ function Service() {
                         Price:{serviceItem.price}
                       </div>
                     </div>
-                    <p>{serviceItem.desc}</p>
+                    <p>
+                      {serviceItem.desc.length >= 0
+                        ? ("...", serviceItem.desc.slice(0, 500))
+                        : undefined}
+                    </p>
                     {/* <p>{serviceItem.desc}</p> */}
                     {/* <p>{console.log(typeof serviceItem.desc)}</p> */}
                     <Link to={`/service/${serviceItem._id}`}>

@@ -5,7 +5,7 @@ import { AuthContext } from "../../contexts/UserContext";
 
 function Login() {
   const { register, handleSubmit } = useForm();
-  const { userLogin, user } = useContext(AuthContext);
+  const { userLogin, user, googleLogin } = useContext(AuthContext);
   // console.log("current user", user);
   const location = useLocation();
   let from = location.state?.from?.pathname || "/home";
@@ -24,13 +24,19 @@ function Login() {
         console.log(err);
       });
   };
+  const hanldeGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        Navigate(from, { replace: true });
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       <div className="hero min-h-screen bg-base-200 my-5">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
-            <h1>{user?.email}</h1>
             <p className="py-6">
               Login gives you more features and access to this site...
             </p>
@@ -63,6 +69,15 @@ function Login() {
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Login</button>
                 </div>
+                <div className="form-control mt-6">
+                  <button
+                    onClick={hanldeGoogleLogin}
+                    className="btn btn-warning"
+                  >
+                    Sign up with google
+                  </button>
+                </div>
+
                 <label className="label">
                   <Link to="/sign-up">sign-up__ if you dont have account!</Link>
                 </label>

@@ -3,15 +3,17 @@ import app from "../firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
-
+const provider = new GoogleAuthProvider();
 export default function UserContext({ children }) {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
@@ -37,6 +39,11 @@ export default function UserContext({ children }) {
   const updateUserProfile = (profile) => {
     return updateProfile(auth.currentUser, profile);
   };
+  // google login
+
+  const googleLogin = () => {
+    return signInWithPopup(auth, provider);
+  };
 
   //   user manged who is loged in or not
   useEffect(() => {
@@ -60,6 +67,7 @@ export default function UserContext({ children }) {
     setLoading,
     userSignOut,
     updateUserProfile,
+    googleLogin,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

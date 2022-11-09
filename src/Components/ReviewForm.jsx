@@ -1,26 +1,59 @@
-import React from "react";
+import { registerVersion } from "firebase/app";
+import React, { useContext } from "react";
+import { AuthContext } from "../contexts/UserContext";
+import { useForm } from "react-hook-form";
 
-function ReviewForm() {
+function ReviewForm({ setReviewAdded, uniqueProductId }) {
+  const { user } = useContext(AuthContext);
+  console.log("real user alada product id", uniqueProductId);
+  const { register, handleSubmit, reset } = useForm();
+
+  const handleReview = (data) => {
+    const reviews = {
+      name: user.displayName,
+      img: user.photoURL,
+      date: new Date(),
+      review: data.review,
+      email: user.email,
+      id: uniqueProductId,
+    };
+    console.log("this will be the info", reviews);
+    fetch("http://localhost:9000/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviews),
+    })
+      .then((response) => response.json())
+      .then((data) => setReviewAdded(data));
+    reset();
+  };
+
   return (
     <div>
       <div class="flex justify-between">
         <div>
           <div className="avatar placeholder mr-2 mt-2">
             <div className="bg-neutral-focus text-neutral-content rounded-full w-8">
-              <span className="text-xs">AA</span>
+              <span className="text-xs">
+                <img src={user.photoURL} alt="" />
+              </span>
             </div>
           </div>
         </div>
         <div className="form-control w-80">
           <div className="relative">
-            <input
-              type="text"
-              placeholder="username@site.com"
-              className="input input-bordered w-full pr-16"
-            />
-            <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
-              Review
-            </button>
+            <form action="" onSubmit={handleSubmit(handleReview)}>
+              <input
+                type="text"
+                name="review"
+                placeholder="Add your review"
+                className="input input-bordered w-full pr-16"
+                {...register("review", { required: true })}
+              />
+              <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
+                Review
+              </button>
+            </form>
           </div>
         </div>
       </div>

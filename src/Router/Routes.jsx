@@ -15,14 +15,17 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPage />,
+
     children: [
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:9000/limit"),
       },
       {
         path: "/home",
         element: <Home />,
+        loader: () => fetch("http://localhost:9000/limit"),
       },
       {
         path: "/service",
@@ -31,11 +34,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/review",
-        element: <MyReview></MyReview>,
+        element: (
+          <PrivetRoute>
+            <MyReview></MyReview>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/add",
-        element: <AddService></AddService>,
+        element: (
+          <PrivetRoute>
+            <AddService></AddService>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/blog",

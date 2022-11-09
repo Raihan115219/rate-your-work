@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Banner";
 import MyInspirations from "../../Components/MyInspirations/MyInspirations";
 import MySuccess from "../../Components/MySuccess/MySuccess";
@@ -6,6 +7,8 @@ import RecentSerivice from "../../Components/RecentService/RecentSerivice";
 import { AuthContext } from "../../contexts/UserContext";
 
 function Home() {
+  const recentService = useLoaderData();
+  console.log("limit data", recentService);
   const { user } = useContext(AuthContext);
   console.log(user);
   return (
@@ -26,7 +29,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <RecentSerivice></RecentSerivice>
+        <RecentSerivice recentService={recentService}></RecentSerivice>
       </div>
       <div>
         <div className="flex justify-center mt-10">

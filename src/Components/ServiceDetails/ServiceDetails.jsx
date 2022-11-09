@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
 import MyReview from "../../Pages/My-Review/MyReview";
@@ -7,8 +7,24 @@ import Reviews from "../Reviews/Reviews";
 import SingleDetails from "./SingleDetails";
 
 function ServiceDetails() {
+  const [review, setReviews] = useState([]);
+  const [reviewAdded, setReviewAdded] = useState({});
   const signleData = useLoaderData();
-  console.log(signleData);
+  // console.log("produect id", signleData._id);
+
+  useEffect(() => {
+    fetch(`http://localhost:9000/reviews?id=${signleData._id}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setReviews(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [reviewAdded, signleData._id]);
 
   const { user } = useContext(AuthContext);
   return (
@@ -18,11 +34,14 @@ function ServiceDetails() {
           {/* details */}
           <SingleDetails signleData={signleData}></SingleDetails>
         </div>
-        <div className="bg-red-100 w-96  p-5 max-h-fit overflow-auto overflow-x-hidden">
+        <div className=" w-96  p-5 h-80 overflow-auto overflow-x-hidden">
           <h1 className="text-center text-5xl p-3">Reviews</h1>
           {user ? (
             // reviews form
-            <ReviewForm></ReviewForm>
+            <ReviewForm
+              setReviewAdded={setReviewAdded}
+              uniqueProductId={signleData._id}
+            ></ReviewForm>
           ) : (
             <h1>
               Please login first to Add review{" "}
@@ -33,8 +52,8 @@ function ServiceDetails() {
           )}
           <div className="w-full h-1 bg-black my-5"></div>
           {/* reviews */}
-          {signleData.reviews.map((item) => {
-            return <Reviews review={item}></Reviews>;
+          {review.map((review, index) => {
+            return <Reviews review={review} key={review._id}></Reviews>;
           })}
         </div>
       </div>
