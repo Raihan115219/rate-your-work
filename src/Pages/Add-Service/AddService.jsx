@@ -33,7 +33,7 @@ function AddService() {
     reset();
   };
   // notifications
-  const notify = () => toast("Delet Success full");
+  const notify = () => toast("Service added Success full");
   return (
     <div>
       <div className="hero my-10">
