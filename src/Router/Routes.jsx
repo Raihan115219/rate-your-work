@@ -10,6 +10,7 @@ import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 import MyReview from "../Pages/My-Review/MyReview";
 import AddService from "../Pages/Add-Service/AddService";
 import BlogPage from "../Pages/BlogPage/BlogPage";
+import EditReview from "../Components/EditReview/EditReview";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/update/:id",
+        element: <EditReview></EditReview>,
       },
       {
         path: "*",

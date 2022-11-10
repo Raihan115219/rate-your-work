@@ -71,7 +71,7 @@ function Service() {
                       </div>
                       <p>
                         {serviceItem.desc.length >= 0
-                          ? ("...", serviceItem.desc.slice(0, 500))
+                          ? ("...", serviceItem.desc.slice(0, 90))
                           : undefined}
                       </p>
                       {/* <p>{serviceItem.desc}</p> */}

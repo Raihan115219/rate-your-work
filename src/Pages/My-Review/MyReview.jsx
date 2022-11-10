@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../contexts/UserContext";
+import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 function MyReview() {
   const [usersReview, setUserReview] = useState(null);
@@ -43,6 +45,9 @@ function MyReview() {
 
   return (
     <div>
+      {/* try modal */}
+
+      {/* finishmidla */}
       <div className="overflow-x-auto my-10">
         <table className="table table-zebra w-full text-center">
           {/* <!-- head --> */}
@@ -56,7 +61,7 @@ function MyReview() {
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-            {usersReview === null ? (
+            {usersReview?.length === 0 ? (
               <div>
                 <h1 className="text-xl">You had not reviewed any one...</h1>
               </div>
@@ -65,10 +70,12 @@ function MyReview() {
                 return (
                   <tr key={review._id}>
                     <th>{index + 1}</th>
-                    <td>{review.id}</td>
+                    <td>{review._id}</td>
                     <td>{review.review}</td>
                     <td>
-                      <button className="btn btn-primary mr-2 ">Edit</button>
+                      <Link to={`/update/${review._id}`}>
+                        <button className="btn btn-primary mr-2 ">Edit</button>
+                      </Link>
                       <button
                         className="btn-error btn"
                         onClick={() => handleDeletReview(review._id)}
@@ -89,6 +96,26 @@ function MyReview() {
         <div>
           <ToastContainer />
         </div>
+        {/* <Modal
+          isOpen={modalIsopen}
+          style={{
+            overlay: {
+              backgroundColor: "gray",
+              position: "absolute",
+              left: "200px",
+              right: "100px",
+            },
+          }}
+          shouldCloseOnOverlayClick={true}
+        >
+          <button
+            className="btn btn-error text-end"
+            onClick={() => setModalIsopen(false)}
+          >
+            Close
+          </button>
+          <div className="flex justify-center"></div>
+        </Modal> */}
         {/* tpast */}
       </div>
     </div>
