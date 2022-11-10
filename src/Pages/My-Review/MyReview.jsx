@@ -14,9 +14,12 @@ function MyReview() {
   const handleDeletReview = (_id) => {
     const areYouSure = window.confirm("are your sure to delet");
     if (areYouSure) {
-      fetch(`http://localhost:9000/reviews/${_id}`, {
-        method: "Delete",
-      })
+      fetch(
+        `https://back-end-side-9p6vzvbca-raihan115219.vercel.app/reviews/${_id}`,
+        {
+          method: "Delete",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
@@ -31,7 +34,9 @@ function MyReview() {
   const notify = () => toast("Delet Success full");
   // api call
   useEffect(() => {
-    fetch(`http://localhost:9000/review?email=${user.email}`)
+    fetch(
+      `https://back-end-side-9p6vzvbca-raihan115219.vercel.app/review?email=${user.email}`
+    )
       .then((response) => {
         return response.json();
       })

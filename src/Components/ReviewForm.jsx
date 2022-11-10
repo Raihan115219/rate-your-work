@@ -18,7 +18,7 @@ function ReviewForm({ setReviewAdded, uniqueProductId }) {
       id: uniqueProductId,
     };
     console.log("this will be the info", reviews);
-    fetch("http://localhost:9000/reviews", {
+    fetch("https://back-end-side-9p6vzvbca-raihan115219.vercel.app/reviews", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reviews),

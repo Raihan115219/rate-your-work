@@ -16,7 +16,7 @@ function AddService() {
       time: new Date(),
     };
 
-    fetch("http://localhost:9000/service", {
+    fetch("https://back-end-side-9p6vzvbca-raihan115219.vercel.app/service", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(service),

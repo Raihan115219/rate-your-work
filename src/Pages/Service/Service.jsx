@@ -9,7 +9,7 @@ function Service() {
   const [serviceLoading, setServiceLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:9000/service")
+    fetch("https://back-end-side-9p6vzvbca-raihan115219.vercel.app/service")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

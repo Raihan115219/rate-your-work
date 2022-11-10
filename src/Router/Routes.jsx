@@ -21,12 +21,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:9000/limit"),
+        loader: () =>
+          fetch(
+            "https://back-end-side-9p6vzvbca-raihan115219.vercel.app/limit"
+          ),
       },
       {
         path: "/home",
         element: <Home />,
-        loader: () => fetch("http://localhost:9000/limit"),
+        loader: () =>
+          fetch(
+            "https://back-end-side-9p6vzvbca-raihan115219.vercel.app/limit"
+          ),
       },
       {
         path: "/service",
@@ -51,13 +57,16 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <BlogPage></BlogPage>,
-        loader: () => fetch("http://localhost:9000/blog"),
+        loader: () =>
+          fetch("https://back-end-side-9p6vzvbca-raihan115219.vercel.app/blog"),
       },
       {
         path: "/service/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:9000/service/${params.id}`),
+          fetch(
+            `https://back-end-side-9p6vzvbca-raihan115219.vercel.app/service/${params.id}`
+          ),
       },
       {
         path: "/login",

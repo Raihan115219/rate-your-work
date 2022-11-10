@@ -26,13 +26,16 @@ function EditReview() {
     console.log("updated reviews", reviews);
 
     // put
-    fetch(`http://localhost:9000/reviews/${storedReview._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(reviews),
-    })
+    fetch(
+      `https://back-end-side-9p6vzvbca-raihan115219.vercel.app/reviews/${storedReview._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(reviews),
+      }
+    )
       .then((res) => {
         return res.json();
       })
@@ -48,7 +51,9 @@ function EditReview() {
   };
   const notify = () => toast("Delet Success full");
   useEffect(() => {
-    fetch(`http://localhost:9000/reviews/${params.id}`)
+    fetch(
+      `https://back-end-side-9p6vzvbca-raihan115219.vercel.app/reviews/${params.id}`
+    )
       .then((response) => {
         return response.json();
       })

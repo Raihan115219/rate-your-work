@@ -13,7 +13,9 @@ function ServiceDetails() {
   // console.log("produect id", signleData._id);
 
   useEffect(() => {
-    fetch(`http://localhost:9000/reviews?id=${signleData._id}`)
+    fetch(
+      `https://back-end-side-9p6vzvbca-raihan115219.vercel.app/reviews?id=${signleData._id}`
+    )
       .then((response) => {
         return response.json();
       })

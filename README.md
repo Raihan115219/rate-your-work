@@ -1,3 +1,21 @@
+Website name:
+my working service-review app
+
+live link: https://review-service-8e258.web.app/
+
+some key feature,,,,
+
+1. here you will se login system, authenticaion
+2. review adde, delet, edit system,
+3. specific user only can added review who will be one the loged in.
+4. There are my Reviw only personal can viist that page,
+5. I have done My review page with privet route,without loged in no can viist that page
+6. Firbeaee, google authenticaton, MongoDB node Express
+
+7. i have added a beautyfull spinner in service pages as weel
+
+8. afterlogin in it will redirect you to home page, or where as you left on.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -13,6 +31,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+<!-- here you will find some extra -->
 
 ### `npm test`
 
