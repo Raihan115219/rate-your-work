@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -36,6 +37,9 @@ function AddService() {
   const notify = () => toast("Service added Success full");
   return (
     <div>
+      <Helmet>
+        <title>Add Service</title>
+      </Helmet>
       <div className="hero my-10">
         <div className="hero-content">
           <div className="card w-full shadow-2xl border-4 bg-base-100">

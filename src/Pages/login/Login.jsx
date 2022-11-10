@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
@@ -37,6 +38,9 @@ function Login() {
   };
   return (
     <div>
+      <Helmet>
+        <title>Login Page</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200 my-5">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Banner";
 import MyInspirations from "../../Components/MyInspirations/MyInspirations";
@@ -13,6 +14,9 @@ function Home() {
   console.log(user);
   return (
     <div>
+      <Helmet>
+        <title>Home page</title>
+      </Helmet>
       <div className="mb-3">
         <Banner></Banner>
       </div>

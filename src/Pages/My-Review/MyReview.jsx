@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../contexts/UserContext";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function MyReview() {
   const [usersReview, setUserReview] = useState(null);
@@ -50,9 +51,9 @@ function MyReview() {
 
   return (
     <div>
-      {/* try modal */}
-
-      {/* finishmidla */}
+      <Helmet>
+        <title>My Review Page</title>
+      </Helmet>
       <div className="overflow-x-auto my-10">
         <table className="table table-zebra w-full text-center">
           {/* <!-- head --> */}

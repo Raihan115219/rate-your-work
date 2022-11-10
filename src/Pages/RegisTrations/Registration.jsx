@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../contexts/UserContext";
+import { Helmet } from "react-helmet-async";
 
 function Registration() {
   const { register, handleSubmit, reset } = useForm();
@@ -39,6 +40,9 @@ function Registration() {
 
   return (
     <div>
+      <Helmet>
+        <title>Registraiton page</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200 my-5">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">

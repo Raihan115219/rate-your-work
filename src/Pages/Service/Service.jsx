@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Audio } from "react-loader-spinner";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
@@ -24,6 +25,9 @@ function Service() {
 
   return (
     <div>
+      <Helmet>
+        <title>Service Page</title>
+      </Helmet>
       <div>
         <div className="flex justify-center mt-10">
           <div className="flex justify-center mt-10">
