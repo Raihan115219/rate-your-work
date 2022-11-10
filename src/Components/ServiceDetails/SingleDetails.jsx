@@ -14,9 +14,6 @@ function SingleDetails({ signleData }) {
             <div className="badge badge-outline">
               Rating: {signleData.rating}
             </div>
-            <div className="badge badge-outline">
-              Review: {signleData.reviews.length}
-            </div>
           </div>
           <h2 className="card-title">{signleData.name}</h2>
           <p>{signleData.desc}</p>

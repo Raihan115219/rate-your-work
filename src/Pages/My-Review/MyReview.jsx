@@ -4,8 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../contexts/UserContext";
 
 function MyReview() {
-  const [usersReview, setUserReview] = useState();
-  const { user } = useContext(AuthContext);
+  const [usersReview, setUserReview] = useState(null);
+  const { user, userSignOut } = useContext(AuthContext);
   console.log("is everythisi here ornot", usersReview);
 
   // delet review
@@ -19,7 +19,7 @@ function MyReview() {
         .then((data) => {
           if (data.deletedCount > 0) {
             notify();
-            const remainReview = usersReview.filter((rev) => rev._id != _id);
+            const remainReview = usersReview.filter((rev) => rev._id !== _id);
             setUserReview(remainReview);
           }
         })
@@ -39,7 +39,7 @@ function MyReview() {
       .catch((err) => {
         console.log(err);
       });
-  }, [user.email]);
+  }, [user.email, userSignOut]);
 
   return (
     <div>
@@ -56,7 +56,11 @@ function MyReview() {
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-            {usersReview ? (
+            {usersReview === null ? (
+              <div>
+                <h1 className="text-xl">You had not reviewed any one...</h1>
+              </div>
+            ) : (
               usersReview?.map((review, index) => {
                 return (
                   <tr key={review._id}>
@@ -75,9 +79,8 @@ function MyReview() {
                   </tr>
                 );
               })
-            ) : (
-              <h1>NO data found</h1>
             )}
+
             {/* <!-- row 2 --> */}
           </tbody>
         </table>

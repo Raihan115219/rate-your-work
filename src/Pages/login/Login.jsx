@@ -15,9 +15,30 @@ function Login() {
   const handleLogin = (data) => {
     const email = data.email;
     const password = data.password;
+    // ===
     userLogin(email, password)
       .then((result) => {
-        // console.log(result.user);
+        const user = result.user;
+        console.log("user login name check", user);
+        // get jwt token
+
+        // fetch("http://localhost:9000/jwt", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(currentUser),
+        // })
+        //   .then((res) => {
+        //     return res.json();
+        //   })
+        //   .then((data) => {
+        //     // console.log("jwt info nite ghobe", data);
+        //     localStorage.setItem("service-token", data.token);
+        //   })
+        //   .catch((err) => {
+        //     console.log(err);
+        //   });
         Navigate(from, { replace: true });
       })
       .catch((err) => {

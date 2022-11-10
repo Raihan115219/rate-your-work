@@ -30,7 +30,6 @@ const router = createBrowserRouter([
       {
         path: "/service",
         element: <Service />,
-        loader: () => fetch("http://localhost:9000/service"),
       },
       {
         path: "/review",
@@ -51,6 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <BlogPage></BlogPage>,
+        loader: () => fetch("http://localhost:9000/blog"),
       },
       {
         path: "/service/:id",
